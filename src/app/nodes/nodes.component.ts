@@ -5,7 +5,7 @@ import { NodesStore } from '../services/nodesStore.service';
 @Component({
   selector: 'node-list',
   templateUrl: './nodes.component.html',
-  styleUrls: ['./nodes.component.css']
+  styleUrls: ['./nodes.component.scss']
 })
 export class NodesComponent implements OnInit {
   expandedNodeURL: string = null;
@@ -16,9 +16,6 @@ export class NodesComponent implements OnInit {
     this.store.getStatus();
   }
 
-  onToogleExpand(node: Node): void {
-    this.expandedNodeURL = node.url === this.expandedNodeURL ? null : node.url;
-  }
 
   isExpanded(node: Node): boolean {
     return this.expandedNodeURL === node.url;

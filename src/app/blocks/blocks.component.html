@@ -1,0 +1,4 @@
+<pre *ngIf="blockStore.loading$ | async">Loading...</pre>
+<pre *ngIf="blockStore.error$ | async">Unavailable services</pre>
+<pre *ngIf="(blockStore.state$ | async)?.length == 0">No blocks present</pre>
+<app-block *ngFor="let item of (blockStore.state$ | async)" [item]="item"></app-block>
